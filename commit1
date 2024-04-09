@@ -1,0 +1,38 @@
+print("GUESS THAT NUMBER!!!!!")
+print()
+print("Guess and number between 1 and 1,000,000 and I will tell you if you are too low, too high, or get it correct")
+print()
+print("Let's play!")
+
+
+
+attempt = 1
+import random
+
+myNumber = random.randint(1, 1000000)
+
+while True:
+  
+  
+  user_guess = int(input("\033[34mPick a number between 1 and 1,000,000:\033[0m"))
+  print()
+  if user_guess < 0:
+    print("Now we'll never know what the answer is …")
+    exit()
+    attempt +=1
+  elif user_guess < myNumber:
+    print("HMMMMM a wee bit low I would say")
+    print()
+    attempt +=1
+  elif user_guess > myNumber:
+    print("I see you are a bit high, try again")
+    print()
+    attempt += 1
+    continue
+  elif user_guess == myNumber:
+    print("You are a winner! SOUND THE ALARMS🚨 THEY'VE GOT IT!!!")
+    break
+
+  else:
+    print("That is not a number I recognize.") 
+print("\033[32mIt took you", attempt, "attempt(s) to get the correct answer.\033[0m")
